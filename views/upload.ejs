@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <style>
+        form {
+            margin: 100px;
+            margin-top: 30px;
+            width: 80%;
+        }
+        .inner{
+            text-align: center;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/cover.css" />
+    <title>Hanuman Jewellers</title>
+</head>
+
+<body>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Hanuman Jewellers</h3>
+                <img src="Images/hanuma.png" alt="pic" width="50px" height="50px"> 
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="/uploadedimages">Uploads</a>
+                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link" href="tel:+919440242898"><i class="fas fa-phone-alt"></i></a>
+                </nav>
+            </div>
+        </header>
+        <form action="/uploads" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Image Name</label>
+                <input type="text" class="form-control" name="ImgName" id="exampleFormControlInput1" />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Category</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="categoryName">
+                    <option>Chains</option>
+                    <option>Ear Rings</option>
+                    <option>Long Harms</option>
+                    <option>Necklace</option>
+                    <option>Rings</option>
+                    <option>Features (Under Development)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Tags</label>
+                <input type="text" class="form-control" name="Tagname" id="exampleFormControlInput1" required />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Description</label>
+                <textarea type="text" class="form-control" id="exampleFormControlInput1"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Choose Image (Png format only)</label>
+                <input type="file" class="form-control-file" name="image" value="" id="exampleFormControlFile1"
+                    required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Save
+            </button>
+        </form>
+        <footer>
+            <p class="copyRight"><i class="fas fa-copyright"></i> Hanuman Jewellers <%=year %></p>
+        </footer>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

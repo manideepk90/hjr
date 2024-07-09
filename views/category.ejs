@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .back {
+      margin: 15px;
+    }
+  </style>
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/category.css" />
+  <title>Hanuman Jewellers</title>
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">Hanuman Jewellers</h3>
+        <img src="/Images/hanuma.png" alt="pic" width="50px" height="50px"> 
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/features">Features</a>
+          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="tel:+919440242898"><i class="fas fa-phone-alt"></i></a>
+        </nav>
+      </div>
+    </header>
+    <main role="main" class="inner cover">
+      <div class="album py-5 bg-light">
+        <h2 class="section-heading h1 pt-4"><%=pageName%></h2>
+        <form action="/<%=pageAddressLink%>" method="get">
+          <button type="submit" class="btn btn-outline-secondary btn-sm back">
+            Go Back
+          </button>
+        </form>
+        <div class="button-category">
+          <% tagNames.forEach(function(buttonNames) { %>
+          <button type="button" class="btn btn-outline-primary">
+            <a href="/category/tags/<%=address%>/<%=buttonNames%>" style="text-decoration: none;"><%=buttonNames%></a>
+          </button>
+          <%})%>
+        </div>
+        <div class="container">
+          <div class="row">
+            <% items.forEach(function(image) { %>
+            <div class="col-md-4 col-sm-6">
+              <div class="card mb-4 shadow-sm" data-toggle="modal" data-target=".man<%=image.id%>">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+                  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                  aria-label="Placeholder: Thumbnail">
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#cf1b1b" />
+                  <image x="0" y="0" width="100%" height="100%" href="data:image/<%=image.image.contentType%>;base64, 
+                                        <%=image.image.data.toString('base64')%>"></image>
+                </svg>
+
+                <div class="modal fade man<%=image.id%>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="500px"
+                          xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                          role="img" aria-label="Placeholder: Thumbnail">
+                          <rect width="100%" height="100%" fill="#cf1b1b" />
+                          <image x="0" y="0" width="100%" height="100%" href="data:image/<%=image.image.contentType%>;base64, 
+                                                        <%=image.image.data.toString('base64')%>"></image>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%})%>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <a href="tel:+919440242898"><i class="fas fa-phone"></i></a>
+      <a href="//api.whatsapp.com/send?phone=919440242898&text=Hi,%20i%20want%20to%20purchase%20from%20you."
+        title="Share on whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/hrs.kpg/"><i class="fab fa-facebook"></i></a>
+      <a href="mailto:hanumanjewellery@gmail.com"><i class="fas fa-envelope"></i></a>
+      <p class="copyRight"><i class="fas fa-copyright"></i> Hanuman Jewellers <%=year %></p>
+    </footer>
+  </div>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
